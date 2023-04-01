@@ -482,6 +482,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="faviconhutech.ico" />
+    <Content Include="Images\UngVien\sonngocphan.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -600,7 +601,6 @@
     <Folder Include="Files\CV\" />
     <Folder Include="Images\Blogs\" />
     <Folder Include="Images\NhaTuyenDung\" />
-    <Folder Include="Images\UngVien\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
