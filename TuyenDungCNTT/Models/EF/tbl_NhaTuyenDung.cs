@@ -27,7 +27,7 @@ namespace TuyenDungCNTT.Models.EF
         [StringLength(50)]
         public string sChucVuNDD { get; set; }
 
-        [StringLength(10)]
+        [StringLength(11)]
         public string sSoDienThoai { get; set; }
 
         [StringLength(200)]
