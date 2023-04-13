@@ -1,7 +1,6 @@
 ﻿@using TuyenDungCNTT.Models.Dao 
 
 @{ 
-    var baiVietChuaDuyet = new BaiVietDao().SlBaiViet(null, false);
     var tinChuaDuyet = new TinTuyenDungDao().SlTinTuyenDung(null, false);
 }
 
@@ -114,37 +113,6 @@
             </ul>
         </li>
 
-        <li>
-            <a href="javascript: void(0);" class="waves-effect">
-                <i class="remixicon-pages-line"></i>
-                <span> Quản lý bài viết </span>
-                @if (baiVietChuaDuyet > 0)
-                {
-                    <span class="badge badge-pink badge-pill float-right">@baiVietChuaDuyet</span>
-                }
-                else
-                {
-                    <span class="menu-arrow"></span>
-                }
-            </a>
-            <ul class="nav-second-level" aria-expanded="false">
-                <li>
-                    <a href="@Url.Action("Index","BaiViet")">Danh sách bài viết</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("Create","BaiViet")">Tạo bài viết mới</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("ChoDuyet","BaiViet")" class="waves-effect">
-                        @if (baiVietChuaDuyet > 0)
-                        {
-                            <span class="badge badge-pink badge-pill float-right">@baiVietChuaDuyet</span>
-                        }
-                        <span> Bài viết chờ duyệt </span>
-                    </a>
-                </li>
-            </ul>
-        </li>
     </ul>
 
 </div>

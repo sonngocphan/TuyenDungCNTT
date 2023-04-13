@@ -4,7 +4,6 @@
 @{
     ViewBag.Title = "Trang chủ";
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
-    var topBaiViet = new BaiVietDao().GetListItemHot(3);
 }
 
 @section css_Main {
@@ -181,38 +180,6 @@
     </div>
 </div>
 
-<div class="main__blog">
-    <div class="main__blog--wrapper grid wide">
-        <h1 class="main__blog--title main__item--title">
-            Bài viết cho bạn
-        </h1>
-        <div class="main__blog--content row">
-            @foreach (var item in topBaiViet)
-            {
-                <div class="blog__item col l-4">
-                    <div class="blog__item--wrapper">
-                        <a href="/bai-viet/@item.TieuDe-@item.MaBaiViet" class="blog__item--link">
-                            <div class="blog__item--img">
-                                <img class="full_width" src="@item.AnhChinh" alt="@item.TenBaiViet">
-                            </div>
-                            <div class="blog__item--content">
-                                <div class="blog__item--description">
-                                    <h3 class="blog__item--name text-line-2">
-                                        @item.TenBaiViet
-                                    </h3>
-                                    <p class="blog__item--data text-line-2">
-                                        <strong>@item.TenTacGia</strong>
-                                    </p>
-                                    <p class="blog__item--see">Xem thêm>></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-</div>
 
 
 <!-- Main login -->

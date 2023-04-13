@@ -317,24 +317,7 @@ namespace TuyenDungCNTT.Models.Dao
             }
         }
 
-        public int UpdatePass(UserPassword item, int idUser)
-        {
-            try
-            {
-                var user = dbContext.tbl_TaiKhoan.Find(idUser);
-                if (user == null) return -1;
-                if (Encryptor.MD5Hash(item.MatKhauCu) == user.sMatKhau)
-                {
-                    user.sMatKhau = Encryptor.MD5Hash(item.MatKhauMoi);
-                    return dbContext.SaveChanges();
-                }
-                return 0;
-            }
-            catch (Exception)
-            {
-                return -1;
-            }
-        }
+        
 
         public async Task<List<tbl_Quyen>> GetAllRole()
         {

@@ -11,9 +11,8 @@ namespace TuyenDungCNTT.Models.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_TaiKhoan()
         {
-            tbl_BaiViet = new HashSet<tbl_BaiViet>();
-        }
 
+        }
         [Key]
         public int PK_iMaTaiKhoan { get; set; }
 
@@ -30,7 +29,6 @@ namespace TuyenDungCNTT.Models.EF
         public bool? bTrangThai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_BaiViet> tbl_BaiViet { get; set; }
 
         public virtual tbl_NhaTuyenDung tbl_NhaTuyenDung { get; set; }
 

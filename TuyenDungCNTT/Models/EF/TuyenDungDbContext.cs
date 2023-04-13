@@ -12,7 +12,6 @@ namespace TuyenDungCNTT.Models.EF
         {
         }
 
-        public virtual DbSet<tbl_BaiViet> tbl_BaiViet { get; set; }
         public virtual DbSet<tbl_CapBac> tbl_CapBac { get; set; }
         public virtual DbSet<tbl_ChuyenNganh> tbl_ChuyenNganh { get; set; }
         public virtual DbSet<tbl_DiaChi> tbl_DiaChi { get; set; }
@@ -84,10 +83,6 @@ namespace TuyenDungCNTT.Models.EF
                 .WithOptional(e => e.tbl_Quyen)
                 .HasForeignKey(e => e.FK_iMaQuyen);
 
-            modelBuilder.Entity<tbl_TaiKhoan>()
-                .HasMany(e => e.tbl_BaiViet)
-                .WithOptional(e => e.tbl_TaiKhoan)
-                .HasForeignKey(e => e.FK_iMaTaiKhoan);
 
             modelBuilder.Entity<tbl_TaiKhoan>()
                 .HasOptional(e => e.tbl_NhaTuyenDung)

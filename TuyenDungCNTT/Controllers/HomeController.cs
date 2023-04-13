@@ -187,35 +187,7 @@ namespace TuyenDungCNTT.Controllers
         {
             return View();
         }
+        
 
-        [HttpPost]
-        public ActionResult DoiMatKhau(UserPassword model)
-        {
-            if (ModelState.IsValid)
-            {
-                var result = taiKhoanDao.UpdatePass(model, UserLogin().Id);
-                if (result > 0)
-                {
-                    SetAlert("Cập nhật thành công!", "success");
-                    return RedirectToAction("Index", "Home");
-                }
-                else if (result == 0)
-                {
-                    ModelState.AddModelError("", "Mật khẩu cũ chưa chính xác");
-                }
-                else
-                {
-                    SetAlert("Đã có lỗi xảy ra!", "error");
-                }
-            }
-            return View();
-        }
-
-        public async Task<ActionResult> BaiViet(int id)
-        {
-            var model = await new BaiVietDao().GetByIdView(id);
-            new BaiVietDao().UpdateCount(id);
-            return View(model);
-        }
     }
 }

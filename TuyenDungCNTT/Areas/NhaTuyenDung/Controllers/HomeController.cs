@@ -29,7 +29,6 @@ namespace TuyenDungCNTT.Areas.NhaTuyenDung.Controllers
             if (userLogin == null) return RedirectToAction("Index", "Login");
             ViewBag.SlTinTuyenDung = tintuyendungDao.SlTinTuyenDung(userLogin.Id, true);
             ViewBag.SlTinChoDuyet = tintuyendungDao.SlTinTuyenDung(userLogin.Id, false);
-            ViewBag.SlBaiViet = new BaiVietDao().SlBaiViet(userLogin.Id, true);
             ViewBag.SlUngVien = new UngTuyenDao().SlUngTuyen(userLogin.Id);
             ViewBag.TopView = new TinTuyenDungDao().GetListTopView(5, userLogin.Id);
             return View();
@@ -75,7 +74,6 @@ namespace TuyenDungCNTT.Areas.NhaTuyenDung.Controllers
         {
             var userLogin = (UserLogin)Session[CommonConstants.EMPLOYER_SESSION];
             ViewBag.SlTinChoDuyet = tintuyendungDao.SlTinTuyenDung(userLogin.Id, false);
-            ViewBag.BaiVietChuaDuyet = new BaiVietDao().SlBaiViet(userLogin.Id, false);
             return PartialView();
         }
     }

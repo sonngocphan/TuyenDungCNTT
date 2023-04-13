@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -120,13 +119,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\BaiVietController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhMucController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
@@ -154,7 +147,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Dao\BaiVietDao.cs" />
     <Compile Include="Models\Dao\DanhMucDao.cs" />
     <Compile Include="Models\Dao\HoSoXinViecDao.cs" />
     <Compile Include="Models\Dao\NhaTuyenDungDao.cs" />
@@ -162,7 +154,6 @@
     <Compile Include="Models\Dao\TinTuyenDungDao.cs" />
     <Compile Include="Models\Dao\UngTuyenDao.cs" />
     <Compile Include="Models\Dao\UngVienDao.cs" />
-    <Compile Include="Models\EF\tbl_BaiViet.cs" />
     <Compile Include="Models\EF\tbl_CapBac.cs" />
     <Compile Include="Models\EF\tbl_ChuyenNganh.cs" />
     <Compile Include="Models\EF\tbl_DiaChi.cs" />
@@ -176,9 +167,6 @@
     <Compile Include="Models\EF\tbl_UngTuyen.cs" />
     <Compile Include="Models\EF\tbl_UngVien.cs" />
     <Compile Include="Models\EF\TuyenDungDbContext.cs" />
-    <Compile Include="Models\ViewModels\BaiViet\BaiVietCreate.cs" />
-    <Compile Include="Models\ViewModels\BaiViet\BaiVietEdit.cs" />
-    <Compile Include="Models\ViewModels\BaiViet\BaiVietVm.cs" />
     <Compile Include="Models\ViewModels\DanhMuc\CapBac.cs" />
     <Compile Include="Models\ViewModels\DanhMuc\ChuyenNganh.cs" />
     <Compile Include="Models\ViewModels\DanhMuc\DiaChi.cs" />
@@ -211,10 +199,8 @@
     <Compile Include="Models\ViewModels\User\UserCreate.cs" />
     <Compile Include="Models\ViewModels\User\UserEdit.cs" />
     <Compile Include="Models\ViewModels\User\UserLogin.cs" />
-    <Compile Include="Models\ViewModels\User\UserPassword.cs" />
     <Compile Include="Models\ViewModels\User\UserRole.cs" />
     <Compile Include="Models\ViewModels\User\UserVm.cs" />
-    <Compile Include="Areas\NhaTuyenDung\Controllers\BaiVietController.cs" />
     <Compile Include="Areas\NhaTuyenDung\Controllers\BaseController.cs" />
     <Compile Include="Areas\NhaTuyenDung\Controllers\HomeController.cs" />
     <Compile Include="Areas\NhaTuyenDung\Controllers\LoginController.cs" />
@@ -505,10 +491,6 @@
     <Content Include="Assets\Plugins\ckeditor\SECURITY.md" />
     <Content Include="Assets\Plugins\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Assets\Client\css\HoSo\style.css.map" />
-    <Content Include="Areas\Admin\Views\BaiViet\ChoDuyet.cshtml" />
-    <Content Include="Areas\Admin\Views\BaiViet\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\BaiViet\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\BaiViet\Index.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMuc\CapBac.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMuc\ChuyenNganh.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMuc\DiaChi.cshtml" />
@@ -516,7 +498,6 @@
     <Content Include="Areas\Admin\Views\DanhMuc\MucLuong.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\NhaTuyenDung\Create.cshtml" />
     <Content Include="Areas\Admin\Views\NhaTuyenDung\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\NhaTuyenDung\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
@@ -532,10 +513,6 @@
     <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <Content Include="Areas\Admin\Views\User\RoleAssign.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\NhaTuyenDung\Views\BaiViet\ChoDuyet.cshtml" />
-    <Content Include="Areas\NhaTuyenDung\Views\BaiViet\Create.cshtml" />
-    <Content Include="Areas\NhaTuyenDung\Views\BaiViet\Edit.cshtml" />
-    <Content Include="Areas\NhaTuyenDung\Views\BaiViet\Index.cshtml" />
     <Content Include="Areas\NhaTuyenDung\Views\Home\Index.cshtml" />
     <Content Include="Areas\NhaTuyenDung\Views\Home\Info.cshtml" />
     <Content Include="Areas\NhaTuyenDung\Views\Login\Index.cshtml" />
@@ -585,11 +562,9 @@
     <Content Include="Views\HoSoXinViec\Index.cshtml" />
     <Content Include="Views\HoSoXinViec\Create.cshtml" />
     <Content Include="Views\HoSoXinViec\HoSo.cshtml" />
-    <Content Include="Views\Home\BaiViet.cshtml" />
     <Content Include="Views\HoSoXinViec\Edit.cshtml" />
     <Content Include="Views\Recruitment\DaLuu.cshtml" />
     <Content Include="Views\UngTuyen\Index.cshtml" />
-    <Content Include="Views\Home\DoiMatKhau.cshtml" />
     <Content Include="Views\Recruitment\PhuHop.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -637,12 +612,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

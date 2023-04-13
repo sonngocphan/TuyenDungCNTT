@@ -18,7 +18,6 @@ namespace TuyenDungCNTT.Areas.Admin.Controllers
             ViewBag.SlUngVien = new TaiKhoanDao().SlUngVien();
             ViewBag.SlNhaTuyenDung = new TaiKhoanDao().SlNhaTuyenDung();
             ViewBag.SlTinTuyenDung = new TinTuyenDungDao().SlTinTuyenDung(null, true);
-            ViewBag.SlBaiViet = new BaiVietDao().SlBaiViet(null, true);
             ViewBag.TopView = new TinTuyenDungDao().GetListTopView(5, null);
             return View();
         }
